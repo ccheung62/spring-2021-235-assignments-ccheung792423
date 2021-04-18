@@ -10,17 +10,18 @@ void BSTree::insert(int d){
 
 }
 
-std::string BSTree::get_debug_string(){
-    if (root == nullptr){
+std::string BSTree::getDebugR(){
+    return getDebugRHelper(root);
+}
+
+std::string BSTree::getDebugRHelper(Node *l){
+    if (l == nullptr){
         return "";
     }
-    else{
-        return std::to_string(root->getData()) + "\n" + 
-        std::to_string(root->getLeft()->getData()) + "  " + std::to_string(root->getRight()->getData()) + "\n" +
-        std::to_string(root->getLeft()->getLeft()->getData()) + "  " + std::to_string(root->getRight()->getLeft()->getData()) + "  " + std::to_string(root->getRight()->getRight()->getData()) + "\n" +
-        std::to_string(root->getLeft()->getLeft()->getLeft()->getData());
+    else {
+        return "->" + std::to_string(l->getData())+ getDebugRHelper(l->getLeft()) + getDebugRHelper(l->getRight());
     }
-};
+}
 
 void BSTree::setup(){
     Node *n = new Node(10);

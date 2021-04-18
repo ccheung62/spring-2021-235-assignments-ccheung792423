@@ -28,7 +28,7 @@ int main(){
     std::cout << "\nVideo 4\n";
     BSTree *t = new BSTree();
     t->setup();
-    std::cout << t->get_debug_string() << std::endl;
+    std::cout << t->getDebugR() << std::endl;
 
     return 0;
 }

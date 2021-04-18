@@ -7,6 +7,7 @@ class BSTree{
     public:
         BSTree();
         void insert(int d);
-        std::string get_debug_string();
+        std::string getDebugR();
+        std::string getDebugRHelper(Node *l);
         void setup();
 };
