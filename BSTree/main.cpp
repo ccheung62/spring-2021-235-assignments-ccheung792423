@@ -30,5 +30,38 @@ int main(){
     t->setup();
     std::cout << t->getDebugR() << std::endl;
 
+    //Recursive search & insert function
+    std::cout << "\nRecursive search & insert function\n";
+    BSTree *recur = new BSTree();
+    recur->insert(-10);
+    recur->insert(20);
+    recur->insert(30);
+    recur->insert(5);
+    recur->insert(17);
+    recur->insert(22);
+    recur->insert(35);
+    recur->insert(40);
+    recur->insert(8);
+    recur->insert(3);
+    recur->insert(9);
+    std::cout << recur->getDebugR() << std::endl;
+    try {
+        int x  = t->search(6);
+        std::cout << x << "\n";
+    } 
+    catch (int e){
+        std::cout << "6 not found\n";
+    }
+    try {
+        int x  = t->search(16);
+        std::cout << x << "\n";
+    } 
+    catch (int e){
+        std::cout << "16 not found\n";
+    }
+    std::cout << recur->search(-10) << " is found" << std::endl;
+    std::cout << recur->search(40) << " is found" << std::endl;
+    std::cout << recur->search(17) << " is found" << std::endl;
+
     return 0;
 }
