@@ -63,5 +63,34 @@ int main(){
     std::cout << recur->search(40) << " is found" << std::endl;
     std::cout << recur->search(17) << " is found" << std::endl;
 
-    return 0;
+    //Delete function 
+    std::cout << "\nDelete function\n";
+    std::cout << "\t" << recur->getDebugR() << std::endl;
+    std::cout << "Deleting 9, a leave" << std::endl;
+    recur->del(9);
+    std::cout << "\t" << recur->getDebugR() << std::endl;
+    std::cout << "Deleting 35, a node with one child" << std::endl;
+    recur->del(35);
+    std::cout << "\t" << recur->getDebugR() << std::endl;
+    std::cout << "Deleting 20, a node with two children" << std::endl;
+    recur->del(20);
+    std::cout << "\t" << recur->getDebugR() << std::endl;
+
+    //Sum of nodes function 
+    std::cout << "\nSum of Nodes function\n";
+    std::cout << "The number of nodes in this tree is " << recur->numNode() << std::endl;
+
+    //Sum of leave function 
+    std::cout << "\nSum of leave function\n";
+    std::cout << "The number of leave in this tree is " << recur->numLeave() << std::endl;
+
+    //Sum of node at a given level function 
+    std::cout << "\nSum at given level function\n";
+    std::cout << "The sum of nodes at level 0 is " << recur->sumLv(0) << std::endl;
+    std::cout << "The sum of nodes at level 2 is " << recur->sumLv(2) << std::endl;
+    std::cout << "The sum of nodes at level 3 is " << recur->sumLv(3) << std::endl;
+
+    //Height function
+    std::cout << "\nHeight function\n";
+    std::cout << "The height of this tree is " << recur->height() << std::endl;
 }
