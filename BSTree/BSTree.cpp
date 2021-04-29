@@ -92,7 +92,17 @@ void BSTree::deleteHelper(int d, Node* pre, Node* cur){
                 walkerPrev = walker;
                 walker = walker->getLeft();
             }
-            walkerPrev->setLeft(nullptr);
+            if (walker->getRight() != nullptr){
+                if (walkerPrev->getLeft() == walker){
+                    walkerPrev->setLeft(walker->getRight());
+                }
+                else {
+                    walkerPrev->setRight(walker->getRight());
+                }
+            }
+            else{
+                walkerPrev->setLeft(nullptr);
+            }
             if (pre->getLeft() == cur){
                 pre->setLeft(walker);
             }
@@ -123,7 +133,7 @@ void BSTree::deleteHelper(int d, Node* pre, Node* cur){
             }
             delete cur;
         }
-        // Deleting a leave
+        // Deleting a leaf
         else{
             if (pre->getLeft() == cur){
                 pre->setLeft(nullptr);
